@@ -1,0 +1,49 @@
+---
+name: "Rathole Client"
+description: "Rathole reverse proxy client for secure NAT traversal. Expose your Home Assistant instance through a rathole server."
+version: "1.0.0"
+slug: "rathole-client"
+url: "https://github.com/rapiz1/rathole"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: "services"
+boot: "auto"
+host_network: true
+options:
+  remote_addr: ""
+  default_token: ""
+  transport_type: "tcp"
+  tls_trusted_root: ""
+  tls_hostname: ""
+  noise_remote_public_key: ""
+  noise_local_private_key: ""
+  websocket_tls: false
+  heartbeat_timeout: 40
+  retry_interval: 1
+  services:
+    - name: "homeassistant"
+      token: ""
+      type: "tcp"
+      local_addr: "homeassistant:8123"
+      nodelay: true
+schema:
+  remote_addr: "str"
+  default_token: "password"
+  transport_type: "list(tcp|tls|noise|websocket)"
+  tls_trusted_root: "str?"
+  tls_hostname: "str?"
+  noise_remote_public_key: "str?"
+  noise_local_private_key: "str?"
+  websocket_tls: "bool?"
+  heartbeat_timeout: "int(0,)"
+  retry_interval: "int(1,)"
+  services:
+    - name: "str"
+      token: "password?"
+      type: "list(tcp|udp)"
+      local_addr: "str"
+      nodelay: "bool?"
+map:
+  - ssl:rw
