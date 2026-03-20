@@ -27,7 +27,3 @@ RUN set -eux; \
     rm -rf /tmp/rathole /tmp/rathole.zip
 
 COPY rootfs /
-
-RUN chmod +x /run.sh
-
-CMD [ "/run.sh" ]
