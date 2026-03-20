@@ -61,7 +61,6 @@ if [ "$TRANSPORT_TYPE" = "tls" ]; then
 [client.transport.tls]
 EOF
     if [ -n "$TLS_TRUSTED_ROOT" ] && [ "$TLS_TRUSTED_ROOT" != "null" ]; then
-        # If the path doesn't start with /, assume it's relative to /ssl
         if [[ "$TLS_TRUSTED_ROOT" != /* ]]; then
             TLS_TRUSTED_ROOT="/ssl/${TLS_TRUSTED_ROOT}"
         fi

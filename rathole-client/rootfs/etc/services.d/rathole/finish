@@ -1,2 +1,0 @@
-#!/usr/bin/execlineb -S1
-/run s6-svscanctl -t /var/run/s6/services
