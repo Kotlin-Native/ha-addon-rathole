@@ -1,7 +1,7 @@
 ---
 name: "Rathole Client"
 description: "Rathole reverse proxy client for secure NAT traversal. Expose your Home Assistant instance through a rathole server."
-version: "1.0.1"
+version: "1.0.2"
 slug: "rathole-client"
 url: "https://github.com/rapiz1/rathole"
 arch:
@@ -10,6 +10,7 @@ arch:
   - armv7
 startup: "services"
 boot: "auto"
+init: false
 host_network: true
 options:
   remote_addr: ""
